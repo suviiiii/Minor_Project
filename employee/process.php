@@ -33,10 +33,8 @@
     $q7_answer = "Computer-Aided Software Engineering";
     $q8_answer = "two";
 
-    // initialize the score
     $score = 2;
 
-    // check the user's answers
     if ($_POST["q1"] == $q1_answer) {
         $score++;
     }
@@ -63,12 +61,34 @@
     }
 
     // display the score
+    
     echo "<h2>Your Rating is: " . $score . "/10</h2>";
 
+    $servername="localhost";
+    $username="root";
+    $password="";
+    $dbname="job_portal";
 
+    $conn=new mysqli($servername, $username, $password, $dbname);
+
+    if($conn->connect_error){
+        die("Connection failed: ".$conn->connect_error);
+    }
+
+    $stmt = $conn->prepare("INSERT INTO quiz_results (username, score) VALUES (?, ?)");
+    $stmt->bind_param("si", $username, $score);
+
+    $username = $_POST["username"];
+
+    // execute the statement
+    $stmt->execute();
+
+    // close the connection
+    $stmt->close();
+    $conn->close();
     ?>
 
-    <button><a href="index1.php">Click Here to continue to your login</a></button>
+    <button><a href="index.php">Click Here to continue to your login</a></button>
 
 </div>
 </body>

@@ -38,6 +38,7 @@ try {
 	$myedu = $row['education'];
 	$mytitle = $row['title'];
 	$mymail = $row['email'];
+	$score = $row['score'];
 	}
 	
 	}
@@ -124,9 +125,9 @@ header("location:./");
 				<div class="container">
 					
 					<div class="logo-wrapper">
-						<div class="logo">
+						<!-- <div class="logo">
 							<a href="./"><img src="images" alt="Logo" /></a>
-						</div>
+						</div> -->
 					</div>
 					
 					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
@@ -275,6 +276,10 @@ header("location:./");
 												<h4 class="heading">Email: </h4>
 												<?php echo "$mymail"; ?>
 											</li>
+									<li>
+									<h4 class="heading">Rating: </h4>
+									<?php echo "$score"; ?> 
+									</li>
 										</ul>
 										
 									</div>

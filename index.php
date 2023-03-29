@@ -171,7 +171,7 @@ include 'constants/check-login.php';
 
 		<div class="main-wrapper">
 		
-			<div class="hero" style="background-image:url('images/hero-header/01.jpg');">
+			<div class="hero" style="background-image:url('images/hero-header/02.jpg');">
 				<div class="container">
 
 					<h1>your bright future starts here now</h1>
